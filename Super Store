@@ -24,3 +24,32 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+
+#For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices. 
+
+
+Select *
+from superstore
+order by price desc;
+
+SELECT *
+from superstore 
+order by average_rating desc;
+
+SELECT *
+from superstore
+order by item_name;
+
+SELECT category, SUM(stock_quantity)
+from superstore
+WHERE category= 'Kitchen Supplies'
+group by price;
+
+SELECT MAX(price), item_name
+from superstore
+where category= 'Kitchen Supplies'
+group by item_name
+order by MAX(PRICE) DESC
+LIMIT 1;
+
